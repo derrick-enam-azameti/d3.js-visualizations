@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My D3</title>
+    <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+
+    <main class="container">
+      <div class="bg-light p-5 rounded mt-3 mb-4">
+        <h5>-- Basic SVG shapes</h5>
+      </div>
+
+<div id="rectElements">
+  <h6>Rectangles</h6>
+  <svg width="700" height="110">
+    <rect width="70" height="40" />
+
+    <rect x="75" width="70" height="40" fill="yellow" />
+    
+    <rect x="75" y="45" width="70" height="40" fill="red"></rect>
+
+    <g transform="translate(0,45)">
+      <rect width="70" height="40" fill="blue"></rect>
+    </g>
+
+    <rect x="160" y="20" width="50" height="50" fill="red" stroke="blue" stroke-width="5" opacity=".65"></rect>
+    <rect x="220" y="20" width="50" height="50" fill="red" stroke="blue" stroke-width="5" fill-opacity=".65"></rect>
+    <rect x="280" y="20" width="50" height="50" fill="red" stroke="blue" stroke-width="5" stroke-opacity=".5"></rect>
+    <rect x="340" y="20" rx="12" ry="12" width="50" height="50" fill="magenta" stroke="black" stroke-width="5" stroke-opacity=".65"></rect>
+    <rect x="400" y="20" style="width:50; height:50; fill:red; stroke:blue;stroke-width:5;fill-opacity:.65"></rect>
+    <g transform="rotate(-2)">
+      <rect x="460" y="20" width="50" height="50" fill="magenta" stroke="black" stroke-width="5" stroke-opacity=".65"></rect>  
+    </g>
+  </svg>
+</div>
+
+<div id="circleElements">
+  <h6>Circles</h6>
+  <svg width="700" height="120">
+    <circle r="40" cx="50" cy="50" style="fill:aquamarine" />
+    <circle r="40" cx="160" cy="50" fill="red" stroke="black" stroke-width="3" ></circle>
+  </svg>
+</div>
+
+<div id="ellipseElement">
+  <h6>Ellipse</h6>
+  <svg width="700" height="120">
+    <ellipse cx="100" cy="50" rx="80" ry="30" fill="red"></ellipse>
+    <ellipse cx="270" cy="50" rx="80" ry="30" fill="red" stroke="black" stroke-width="3" />
+  </svg>
+</div>
+
+<div id="lineElement">
+  <h6>Line</h6>
+  <svg width="700" height="120">
+    <line x1="10" y1="10" x2="300" y2="100" style="stroke:coral; stroke-width:5"/>
+    
+  </svg>
+</div>
+
+<div id="polylineElement">
+  <h6>Polyline</h6>
+  <svg width="700" height="220">
+    <polyline 
+    points="20,30 50,40 70,70 100,150, 120,150 150,150 150,110 190,110 190,70 230,70" 
+    style="fill:none;stroke:black;stroke-width: 3;"
+    />
+  </svg>
+</div>
+
+<div id="polygonElement">
+  <h6>Polgon</h6>
+  <svg width="700" height="320">
+    <polygon 
+    points="10,30 30,10 50,10 70,30 70,50 50,70 30,70 10,50"
+    fill="lime"
+    />
+    
+    <g transform="translate(90,0)">
+      <polygon 
+      points="10,30 30,10 50,10 70,30 70,50 50,70 30,70 10,50"
+      fill="none"
+      stroke="blue"
+      stroke-width="2"
+      />
+    </g>
+
+    <g transform="translate(180,0) scale(1.5) rotate(15)">
+      <polygon points="10,30 30,10 50,10 70,30 70,50 50,70 30,70 10,50 " />
+    </g>
+
+    <g transform="translate(260,0)">
+      <polygon 
+      points="55,10 10,120 100,120"
+      fill="none"
+      stroke="red"
+      stroke-width="5"
+      />
+    </g>
+
+    <g transform="translate(370,0)">
+      <polygon 
+      points="55,10 10,120 100,120"
+      />
+    </g>
+
+  </svg>
+</div>
+
+<div id="pathElement">
+  <h6>Path</h6>
+  <p class="lead">
+    The <code>&ltpath&gt</code> element is used to define a path.<br/>
+    The following commands are available for path data:
+  </p>
+  <ol class="lead" style="font-size: 1em; font-weight: 500;">
+    <li>M = moveto</li>
+    <li>L = lineto</li>
+    <li>H = horizontal lineto</li>
+    <li>V = vertical lineto</li>
+    <li>C = curveto</li>
+    <li>S = smooth curveto</li>
+    <li>Q = quadratic Bézier curve</li>
+    <li>T = smooth quadratic Bézier curveto</li>
+    <li>A = elliptical Arc</li>
+    <li>Z = closepath</li>
+  </ul>
+  <p class="lead">
+    <strong>Note:</strong>
+    All the commands above can also be expressed with lower case letters.<br>
+    Capital letters means <b>absolutely positioned</b>, lower cases means <b>relatively positioned</b>.
+  </p>
+  <svg width="700" height="250">
+    <g transform="translate(170,0)">
+      <path d="M150 0 L75 200 L225 200 Z" fill="none" stroke="red" />
+    </g>
+    <path d="M150 0 L75 200 L225 200 Z" />
+
+  </svg>
+  <path />
+</div>
+
+<div id="textElement">
+  <h6>Text</h6>
+  <svg width="700" height="750">
+
+    <text x="0" y="20">SVG is great</text>
+    <text x="100" y="5" transform="rotate(30 20, 40)">SVG is great</text>
+
+    <text x="260" y="20" style="fill:red;">Several lines:
+      <tspan x="260" y="45">First line.</tspan>
+      <tspan x="260" y="70">Second line.</tspan>
+    </text>
+      
+    
+  </svg>
+</div>
+
+      
+
+
+    </main>
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Practicing D3</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Basics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gymnastics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">D3.js</a>
+            </li>
+            <li class="nav-item dropup">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-bs-toggle="dropdown" aria-expanded="false">Animations</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropup">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-bs-toggle="dropdown" aria-expanded="false">Interactivity</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script src="./dist/js/bootstrap.bundle.min.js"></script>    
+</body>
+</html>
